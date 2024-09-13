@@ -2,6 +2,8 @@
 
 A simple and interactive ToDo List application built with React and styled-components. This application allows users to add, mark, and delete tasks, helping them manage their daily activities efficiently.
 
+![Demo Screenshot](./client/public/capture.png)
+
 ## 📚Features
 
 - Add new tasks with ease.

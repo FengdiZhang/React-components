@@ -69,7 +69,7 @@ Desktop.ini
 
 # Gatsby files
 .cache/
-public/
+
 
 # VuePress
 .vuepress/dist
