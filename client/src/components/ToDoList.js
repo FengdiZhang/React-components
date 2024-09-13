@@ -54,15 +54,15 @@ const ToDoList = () => {
     <Wrapper>
       <h1>To-Do List</h1>
       <InputWrapper>
-        <input
+        <TextInput
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="add new task"
         />
-        <Button onClick={handleSubmit}>+</Button>
+        <Button onClick={handleSubmit}>Add</Button>
       </InputWrapper>
-      <ul>
+      <List>
         {toDo.map((item) => (
           <li key={item.id}>
             <input
@@ -70,22 +70,59 @@ const ToDoList = () => {
               checked={item.completed}
               onChange={() => handleCheckToDo(item.id)}
             />
-            {item.id} {item.title}
+            {item.id}. {item.title}
+            &nbsp;&nbsp;
             {item.completed ? "✅" : "❌"}
+            &nbsp;&nbsp;
             <Button
               onClick={() => {
                 handleDelete(item.id);
               }}
             >
-              -
+              Delete
             </Button>
           </li>
         ))}
-      </ul>
+      </List>
     </Wrapper>
   );
 };
-const Wrapper = styled.div``;
-const InputWrapper = styled.div``;
-const Button = styled.button``;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: auto;
+`;
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+const TextInput = styled.input`
+  width: 400px;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+`;
+const Button = styled.button`
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+`;
+const List = styled.ul`
+  list-style: none;
+  li {
+    margin-bottom: 10px;
+  }
+  input {
+    margin-right: 10px;
+  }
+`;
 export default ToDoList;
